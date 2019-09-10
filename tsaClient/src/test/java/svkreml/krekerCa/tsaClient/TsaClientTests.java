@@ -19,7 +19,7 @@ public class TsaClientTests {
     @Test
     public void getSha256TimeStamp() throws IOException {
         MessageDigest digest = new SHA256.Digest();
-        TsaClient tsaClient = new TsaClient(new URL("http://testguc/TSP/tsp.srf"), "", "", digest);
+        TsaClient tsaClient = new TsaClient(new URL("http://localhost:8082/tsa.srf"), "", "", digest);
 
         String originalMessage = UUID.randomUUID().toString();
         digest.digest(TsaClient.hexStringToByteArray(originalMessage));
@@ -58,7 +58,6 @@ public class TsaClientTests {
     @Test
     public void getGost2012_256TimeStamp() throws IOException {
         MessageDigest digest = new GOST3411.Digest2012_256();
-        //TsaClient tsaClient = new TsaClient(new URL("http://testguc/TSP/tsp.srf"), "", "", digest);
         //TsaClient tsaClient = new TsaClient(new URL("http://www.cryptopro.ru/tsp/tsp.srf"), "", "", digest);
         TsaClient tsaClient = new TsaClient(new URL("http://localhost:8082/tsa.srf"), "", "", digest);
 
