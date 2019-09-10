@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>svkreml.krekerCa</groupId>
+    <artifactId>TSA</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <description>УЦ Крекер. сервер штампов времени</description>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <modules>
+        <module>KrekerCore</module>
+        <module>tsaClient</module>
+        <module>tsaServer</module>
+    </modules>
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.60</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcpkix-jdk15on -->
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcpkix-jdk15on</artifactId>
+            <version>1.60</version>
+        </dependency>
+
+
+
+
+
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>svkreml.krekerCa</groupId>
+            <artifactId>KrekerCore</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>
